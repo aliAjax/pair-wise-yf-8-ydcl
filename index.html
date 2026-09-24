@@ -52,6 +52,58 @@
         <button id="exportBtn">导出清单</button>
       </section>
 
+      <section class="panel screening-panel" id="screeningPanel" aria-label="现场放映计时区">
+        <div class="screening-head">
+          <div>
+            <h2>现场放映计时</h2>
+            <p class="screening-hint">开始后按片段剩余秒数倒计时；可暂停续放、临时跳过，进度自动保存在本机，重开页面不丢。</p>
+          </div>
+          <span class="screening-status status-idle" id="screeningStatus">未开始</span>
+        </div>
+
+        <div class="screening-now">
+          <div class="now-meta">
+            <span class="now-label">正在放映</span>
+            <strong id="nowCode">准备就绪</strong>
+            <p class="now-note" id="nowNote"></p>
+          </div>
+          <div class="now-clock">
+            <strong id="nowRemaining">0:00</strong>
+            <span>本段剩余（计划 <em id="nowPlanned">0:00</em>）</span>
+          </div>
+        </div>
+        <div class="now-progress"><div id="nowProgressBar"></div></div>
+
+        <div class="screening-controls">
+          <button id="startBtn" class="primary" type="button">开始放映</button>
+          <button id="pauseBtn" class="hidden" type="button">暂停</button>
+          <button id="resumeBtn" class="primary hidden" type="button">继续放映</button>
+          <button id="skipBtn" class="hidden" type="button">跳过本段（留下已映秒数）</button>
+          <button id="resetBtn" class="ghost hidden" type="button">重新放映</button>
+        </div>
+
+        <div class="screening-stats">
+          <div>
+            <span>计划时长</span>
+            <strong id="planTotal">0:00</strong>
+          </div>
+          <div>
+            <span>实际放映</span>
+            <strong id="actualTotal">0:00</strong>
+          </div>
+          <div>
+            <span>放映进度</span>
+            <strong id="progressText">0/0</strong>
+          </div>
+          <div>
+            <span>跳过片段</span>
+            <strong id="skipCount">0</strong>
+          </div>
+        </div>
+
+        <div id="screeningSummary" class="screening-summary hidden"></div>
+      </section>
+
       <section class="layout">
         <aside class="panel">
           <h2>录入片段</h2>
