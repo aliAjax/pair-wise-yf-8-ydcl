@@ -52,6 +52,43 @@
         <button id="exportBtn">导出清单</button>
       </section>
 
+      <section class="panel screening-panel" id="screeningPanel" aria-live="polite">
+        <div class="panel-head">
+          <h2>现场放映计时</h2>
+          <span id="screeningStatusText">待映</span>
+        </div>
+        <div class="screening-grid">
+          <div class="screening-now">
+            <span class="now-label">当前片段</span>
+            <strong class="now-code" id="nowCode">—</strong>
+            <div class="now-countdown" id="nowCountdownBox">
+              <span id="nowCountdown">--</span>
+              <small>秒后走完本段</small>
+            </div>
+            <span class="now-meta" id="nowMeta">按下「开始放映」后，按本段剩余秒数倒计时。</span>
+            <span class="now-note" id="nowNote"></span>
+          </div>
+          <div class="screening-side">
+            <div class="screening-controls">
+              <button class="primary" id="startToggleBtn" type="button">开始放映</button>
+              <button id="skipBtn" type="button" disabled>跳过本段</button>
+              <button id="resetScreeningBtn" type="button" disabled>清空进度</button>
+            </div>
+            <div class="screening-progress">
+              <div class="progress-meta">
+                <span id="progressText">第 0 / 0 段</span>
+                <span id="elapsedText">已放映 0:00</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+              </div>
+              <p class="screening-hint">暂停后继续会从停下的秒数接着走；临时跳过会留下本段已放映秒数，再进入下一段。</p>
+            </div>
+          </div>
+        </div>
+        <div class="screening-summary" id="screeningSummary" hidden></div>
+      </section>
+
       <section class="layout">
         <aside class="panel">
           <h2>录入片段</h2>
